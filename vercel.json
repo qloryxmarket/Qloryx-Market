@@ -1,0 +1,33 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "react",
+  "outputDirectory": "build",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
+    }
+  ],
+  "env": {
+    "REACT_APP_WHATSAPP_NUMBER": "213798765432"
+  },
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/old-path",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
